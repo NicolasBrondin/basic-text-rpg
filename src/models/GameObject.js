@@ -1,9 +1,13 @@
 export class GameObject {
-    constructor(gc, name,type, status){
+    constructor(gc, name, type, icons, status){
         this.game = gc;
-        this.name = name;
+        this.isNew = true;
         this.type = type;
-        this.status = status || "ok";
+        this.name = name;
+        this.icons = icons;
+        this.status = status || "idle";
+        this.icon = icons[status || "idle"];
+        console.log(icons, this.icon);
     }
 
     break(){
@@ -18,5 +22,25 @@ export class GameObject {
         return false;
     }
 
-    
+    use(){
+        this.isNew = false;
+        return false;
+    }
+
+    take(){
+        this.isNew = false;
+        return false;
+    }
+
+    burn(){
+        return false;
+    }
+
+    combine(){
+        return false;
+    }
+
+    dirty(){
+        return false;
+    }
 }
