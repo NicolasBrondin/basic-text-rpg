@@ -124,7 +124,7 @@ header {
   background: rgba(0,0,0,0.7);
 }
 
-.v--modal-box {
+.v--modal {
   @apply rounded-lg p-8;
 }
 </style>

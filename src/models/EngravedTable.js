@@ -11,7 +11,7 @@ export class EngravedTable extends Table {
             this.isNew = false;
             this.status = "flipped";
             this.icon = this.icons.flipped;
-            this.name += " (retournée, gravure visible)";
+            this.name += " (retournée, gravure illisible)";
         }
         return true;
     }

@@ -20,7 +20,7 @@ export class GameController {
         this.world = [
             new Container(this, "Bureau","desk", [
                 new Collectible(this, "Bille en métal","marble",{idle: "https://image.flaticon.com/icons/png/512/3873/3873825.png"}, "idle"),
-                new Readable(this, "Lettre", "idle", "Ne perds surtout pas la clé du cadenas, sinon tu resteras coincé !"),
+                new Readable(this, "Lettre", "idle", "Note à moi-même, ne plus utiliser un cadenas sans avoir trouvé la clé auparavant..."),
                 new Lighter(this, "Briquet", "idle"),
                 new Gun(this, "Vieux pistolet", "idle")    
             ], null, "idle"),
