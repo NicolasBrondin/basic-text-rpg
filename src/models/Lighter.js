@@ -1,4 +1,5 @@
 import { Collectible } from './Collectible';
+import { Ash } from './Ash'
 
 export class Lighter extends Collectible {
     constructor(gc, name, status){
@@ -21,7 +22,13 @@ export class Lighter extends Collectible {
 
     combine(o){
         if(this.status === "on"){
-            return o.burn();
+            if(o.burn()){
+                this.game.showText("Le papier brûle et laisse un tas de cendre");
+                this.game.addObject(new Ash(this.game, "Cendres", "idle"),this);
+                this.game.removeObjectFromWorld(o);
+                return true;
+            }
+            
         }
         return false;
     }

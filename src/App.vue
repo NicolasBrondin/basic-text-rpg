@@ -28,7 +28,7 @@ const icons = {
 export default {
   name: 'App',
   mounted:function (){
-    this.showText("Vous êtes enfermé dans votre salle de classe, impossible de remettre la main sur la clé, il faudra peut-être le casser, mais il est très solide !")
+    this.showText("Vous êtes enfermé dans votre salle de classe, impossible de remettre la main sur la clé du cadenas, il faudra peut-être le casser, mais il est très solide !")
   },
   data: function(){
     return {

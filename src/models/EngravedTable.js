@@ -18,7 +18,7 @@ export class EngravedTable extends Table {
 
     dirty(){
         if(this.status == "flipped") {
-            this.game.addObject(new Code(this, "Code", "idle","0000"));
+            this.game.addObject(new Code(this, "Code", "idle","0000"), this);
             this.status = "code_revealed";
         }
         return true;

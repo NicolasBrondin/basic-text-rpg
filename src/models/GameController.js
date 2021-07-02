@@ -14,7 +14,7 @@ export class GameController {
     constructor(ui){
         this.ui = ui;
         this.life = 50;
-        this.time = 120;
+        this.time = 300;
         this.inventory = [];
 
         this.world = [

@@ -1,5 +1,4 @@
 import { Collectible } from './Collectible';
-import { Ash } from './Ash'
 
 export class Readable extends Collectible {
     constructor(gc, name, status, text){
@@ -17,8 +16,6 @@ export class Readable extends Collectible {
     }
 
     burn(){
-        this.game.addObject(new Ash(this.game, "Cendres", "idle"));
-        this.game.removeObjectFromWorld(this);
         return true;
     }
 }
