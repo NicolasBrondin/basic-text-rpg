@@ -4,7 +4,7 @@
       <Timer :time="gameController.time"/>
       <Craft :items="gameController.inventory" @remove-item="onRemoveItem" @combine="onCombine"/>
     </header>
-    <Room :items="gameController.world" :onItemAttack="onAttack" :onItemTake="onTake" :onItemUse="onUse"/>
+    <Room :items="gameController.world" :onItemTake="onTake" :onItemUse="onUse"/>
     <Button color="danger" :icon="icons.lock" @click="finish" :disabled="!gameController.finished">Sortir</Button>
     <modal name="text-modal" height="auto" :adaptive="true">
         {{modalText}}
@@ -28,7 +28,7 @@ const icons = {
 export default {
   name: 'App',
   mounted:function (){
-    
+    this.showText("Vous êtes enfermé dans votre salle de classe, impossible de remettre la main sur la clé, il faudra peut-être le casser, mais il est très solide !")
   },
   data: function(){
     return {
@@ -42,29 +42,22 @@ export default {
   methods: {
     showText: function(t){
       this.modalText = t;
-      console.log(this.modalText);
       this.$modal.show('text-modal',{ adaptive: true, height:"auto"});
     },
     onRemoveItem: function(i){
       this.gameController.removeObjectFromInventory(i);
     },
-    onAttack: function(o){
-      if(!o.break()){
-        alert('Impossible to attack '+o.name+' again!');
-      }
-    },
     onTake: function(o){
       if(!this.gameController.moveObjectToInventory(o)){
-        alert('Impossible to take '+o.name+'!');
+        this.showText('Impossible de prendre '+o.name+'!');
       }
     },
     onUse: function(o){
       if(!o.use()){
-        alert('Impossible to use '+o.name+'!');
+        this.showText('Rien ne se passe');
       }
     },
     onCombine: function(){
-      console.log("coucou");
       this.gameController.combine();
     },
     finish: function(){
@@ -132,6 +125,6 @@ header {
 }
 
 .v--modal-box {
-  @apply rounded-lg p-4;
+  @apply rounded-lg p-8;
 }
 </style>
