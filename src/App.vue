@@ -125,6 +125,6 @@ header {
 }
 
 .v--modal {
-  @apply rounded-lg p-8;
+  @apply rounded-lg p-8 !important;
 }
 </style>
