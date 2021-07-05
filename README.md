@@ -1,4 +1,4 @@
-# school-game
+# escape game
 
 ## Project setup
 ```
