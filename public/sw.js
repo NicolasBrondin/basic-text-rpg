@@ -17,7 +17,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log('Fetch intercepted for:', event.request.url);
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
+    caches.match(event.request, {ignoreSearch: true}).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
