@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style>
-
+@import '/index.css';
 html {
  background: #232526;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
@@ -121,7 +121,7 @@ header {
 }
 
 .v--modal-overlay {
-  background: rgba(0,0,0,0.7);
+  @apply bg-black-through !important;
 }
 
 .v--modal {
